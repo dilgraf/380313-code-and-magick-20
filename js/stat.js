@@ -1,12 +1,12 @@
 'use strict';
 
-//СТАТИСТИКА
+// СТАТИСТИКА
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
 var CLOUD_Y = 10;
 
-var GAP = 20; //расстояние от CLOUD_X до текста
+var GAP = 20; // расстояние от CLOUD_X до текста
 var TEXT_HEIGHT = 18;
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
@@ -15,7 +15,7 @@ var BAR_GAP = 50;
 var YOUR_COLOR = 'rgba(255, 0, 0, 1)';
 
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
@@ -35,10 +35,10 @@ var getMaxElement = function (arr) {
 var getColor = function (name) {
   var othersColor = 'hsl(240,' + Math.floor(Math.random() * 101) + '%, 50%';
   return (name === 'Вы') ? YOUR_COLOR : othersColor;
-}
+};
 
-//функция является методом window, принимает контекст канваса
-window.renderStatistics = function(ctx, names, times) {
+// функция является методом window, принимает контекст канваса
+window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + 10, CLOUD_Y + 10, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
